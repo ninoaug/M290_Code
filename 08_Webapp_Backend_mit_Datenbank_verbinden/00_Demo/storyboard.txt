@@ -1,0 +1,13 @@
+0. Ausgangssituation demonstrieren
+1. DB: Datenbank mit einer Tabelle erstellen
+2. SERVER: UserRepository und aufrufenden Code entfernen
+3. SERVER: DB-Konfiguration
+4. SERVER: Pfade erstellen
+5. SERVER: create/Insert erstellen
+5. SERVER: findOne/Insert erstellen
+6. CLIENT: Test mit Postman
+
+Aufgabe
+1. CRUD von findAll, findByFirstName
+2. CRUD von updateByLastName
+3. CRUD deleteById
