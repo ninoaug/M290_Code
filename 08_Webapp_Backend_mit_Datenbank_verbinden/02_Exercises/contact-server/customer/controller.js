@@ -8,7 +8,7 @@ const customerObj = new Customer();
 function create(req, res) {
   // Validate request
   if (!req.body) {
-    res.status(HTTP_STATUS.SUCCESSFUL_CREATED).send({
+    res.status(HTTP_STATUS.BAD_REQUEST).send({
       message: "Content can not be empty!"
     });
   }
@@ -21,7 +21,7 @@ function create(req, res) {
     "firstName": req.body.firstName,
     "registered": (new Date())
   }
-  //--Ende
+  //--End
 
   console.log(`Following data parsed from body ..`);
   console.log(data);
@@ -62,7 +62,7 @@ function findAll(req, res){
 function findOne(req, res){
 
 }
-//--Ende
+//--End
 
 // Update a Customer identified by the customerId in the request
 function update(req, res){
@@ -84,7 +84,7 @@ function update(req, res){
           });
         } else {
           res.status(HTTP_STATUS.SERVER_ERROR).send({
-            message: "Error updating Customer with id " + req.params.id
+            message: `Error updating Customer with id ${req.params.id}.`
           });
         }
       } else res.send(result);
@@ -98,14 +98,14 @@ function update(req, res){
 function remove(req,res){
 
 }
-//--Ende
+//--End
 
 //Aufgabe: Alle Kunden löschen
 //--Begin
 function removeAll(req, res){
 
 }
-//--Ende
+//--End
 
 
 /**
@@ -119,4 +119,4 @@ module.exports = {
   findAll,
   update
 }
-//--Ende
+//--End

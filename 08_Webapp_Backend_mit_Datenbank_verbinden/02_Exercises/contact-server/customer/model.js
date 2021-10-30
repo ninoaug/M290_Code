@@ -27,17 +27,20 @@ module.exports = class Customer {
 
     /**
      * Select customer by ID
-     * @param Id
+     * @param id
      * @param cbResult: result of sql statement
      */
-    findById(Id, cbResult) {
-        sql.query(`SELECT * FROM customer WHERE id = ${Id}`, (err, result) => {
+    //Aufgabe: Lese einen einzelnen Kunden anhand der ID aus
+    //--Begin
+    findById(id, cbResult) {
+        sql.query(`--??`, id, (err, result) => {
             if (err) {
-                console.log("error: ", err);
-                cbResult(err, null);
-                return;
+                //??
+                //??
+                //??
             }
 
+            //result of the select (greater than 0) has found a record (Tupel)
             if (result.length) {
                 console.log("found customer: ", result[0]);
                 cbResult(null, result[0]);
@@ -45,27 +48,29 @@ module.exports = class Customer {
             }
 
             // not found Customer with the id
-            cbResult({kind: "not_found"}, null);
+            //??
         });
     };
-
+    //--End
 
 
     /**
      * Get all customers
      * @param cbResult: result of sql statement
      */
-    getAll(cbResult) {
-        sql.query('SELECT * FROM customer', (err, result) => {
-            if (err) {
+    getAll(cbResult){
+        sql.query('SELECT * FROM customer', (err,result) => {
+            if (err){
                 console.log("error: ", err);
-                cbResult(null, err);
+                //err zurückgeben, data = null
+                cbResult(err, null);
                 return;
             }
             console.log("customer: ", result);
+            //err = null, data zurückgeben
             cbResult(null, result);
-        });
-    };
+        })
+    }
 
 
     /**
@@ -79,13 +84,14 @@ module.exports = class Customer {
         //--Begin
         let queryString = 'UPDATE customer SET email = ?, firstName = ?';
         queryString += ' WHERE id = ?';
-        //--Ende
+        //--End
         sql.query(queryString,
             [customer.email, customer.firstName, parseInt(id)],
             (err, result) => {
-                if (err) {
+                if (err){
                     console.log("error: ", err);
-                    cbResult(null, err);
+                    //err zurückgeben, data = null
+                    cbResult(err, null);
                     return;
                 }
 
@@ -106,39 +112,44 @@ module.exports = class Customer {
      * @param id
      * @param cbResult: result of sql statement
      */
+    //Aufgabe: Einzelnen Kunden anhand der ID löschen
+    //--Begin
     remove(id, cbResult) {
-        sql.query("DELETE FROM customer WHERE id = ?", id, (err, result) => {
+        sql.query("--??", id, (err, result) => {
             if (err) {
-                console.log("error: ", err);
-                cbResult(null, err);
-                return;
+                //??
+                //??
+                //??
             }
 
             if (result.affectedRows === 0) {
                 // not found Customer with the id
-                cbResult({kind: "not_found"}, null);
-                return;
+                //??
+                //??
             }
 
             console.log("deleted customer with id: ", id);
-            cbResult(null, result);
+            //??
         });
     }
+    //--End
 
     /**
      * Remove all customers
      * @param cbResult: result of sql statement
      */
+    //Aufgabe: Alle Kunden löschen
+    //--Begin
     removeAll(cbResult) {
-        sql.query("DELETE FROM customer", (err, result) => {
+        sql.query("--??", (err, result) => {
             if (err) {
-                console.log("error: ", err);
-                cbResult(null, err);
-                return;
+                //??
+                //??
+                //??
             }
 
             console.log(`deleted ${result.affectedRows} customer`);
-            cbResult(null, result);
+            //??
         });
     }
 }

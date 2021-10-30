@@ -1,6 +1,6 @@
 /*
 Thema: Email-Kontakt
-Einfacher Server, um über das Webseiten-Fomrular den Benutzer zu kontaktieren.
+Einfacher Server, um über das Webseiten-Formular den Benutzer zu kontaktieren.
 Der Server dient zu Übung zur Validierung von Benutzereingaben im Backend.
  */
 

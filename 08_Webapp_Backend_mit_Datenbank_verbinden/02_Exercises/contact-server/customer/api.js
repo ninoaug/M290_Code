@@ -8,27 +8,27 @@ module.exports = app => {
   // Retrieve all Customers
   app.get("/customers", customer.findAll);
 
-  //M290-Aufgabe: REST-API, um EINEN Kunden anhand der ID auszugeben
+  //Aufgabe: REST-API, um EINEN Kunden anhand der ID auszugeben
   //--Begin
   // Retrieve a single Customer with login id
 
-  //--Ende
+  //--End
 
   // Update a Customer with customerId
   app.put("/customer/:id", customer.update);
 
 
-  //M290-Aufgabe: REST-API, um EINEN Kunden anhand der ID zu löschen
+  //Aufgabe: REST-API, um EINEN Kunden anhand der ID zu löschen
   //--Begin
   // Delete a Customer with customerId
 
-  //--Ende
+  //--End
 
 
-  //M290-Aufgabe: REST-API, um alle Kunden zu löschen
+  //Aufgabe: REST-API, um alle Kunden zu löschen
   //--Begin
   // delete all customers
 
-  //--Ende
+  //--End
 
 };

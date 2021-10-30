@@ -2,8 +2,8 @@
 const validateLib = require('./ValidationLib');
 
 /**
- * Validate User
- * @param userObj
+ * Validate form data
+ * @param data
  * @returns {boolean|{msg: string, isNotValid: boolean}|{isNotValid}|*}
  */
 function validateFormData(data) {
@@ -17,7 +17,7 @@ function validateFormData(data) {
     //Aufgabe: checkRequired für lastName, subject, description, phone hinzufügen
     //--Begin
 
-    //--Ende
+    //--End
 
     //check length
     result = validateLib.checkLength("firstName",data.firstName, 3, 50);
@@ -26,7 +26,7 @@ function validateFormData(data) {
     //Aufgabe: checkLength für lastName hinzufügen
     //--Begin
 
-    //--Ende
+    //--End
 
     //check email syntax
     result = validateLib.checkEmail("email", data.email);
@@ -36,7 +36,7 @@ function validateFormData(data) {
     //Aufgabe: Validierungsregel der Mobilenummer anwenden
     //--Begin
 
-    //--Ende
+    //--End
 
 
     //all inputs are valid and isNotValid=false
